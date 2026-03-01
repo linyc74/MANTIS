@@ -57,7 +57,7 @@ def check_line_validity(line):
 		# Wrong number of columns
 		valid = False
 	else:
-		if len(line[0].strip()) is 0:
+		if len(line[0].strip()) == 0:
 			# Reference/chromosome appears empty.
 			valid = False
 		elif not line[1].isdigit() or not line[2].isdigit():
@@ -158,7 +158,7 @@ if __name__ == '__main__':
 			os.makedirs(output_folder)
 
 	with open(output_filepath, 'w') as fileout:
-		with open(input_filepath, 'Ur') as filein:
+		with open(input_filepath, 'r') as filein:
 			for line in filein:
 				line = line.strip()
 				if len(line):

@@ -276,7 +276,7 @@ def load_loci(input_filepath):
     with open(input_filepath, 'r') as filein:
         n = 0
         for line in filein:
-            if n is 0:
+            if n == 0:
                 # First line (header row), skip it
                 n = 1
                 continue

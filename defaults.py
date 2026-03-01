@@ -41,7 +41,7 @@ returns them as a dict object.
 """
 def load_config_file(filepath):
     config = {}
-    with open(filepath, 'Ur') as f:
+    with open(filepath, 'r') as f:
         for line in f:
             line = line.strip()
             if len(line) and line[0] != '#':

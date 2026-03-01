@@ -42,7 +42,7 @@ e.g.
 chr1  10357206    10357223    (T)17   0   +
 """
 def check_bedfile_format(filepath):
-    with open(filepath, 'Ur') as f:
+    with open(filepath, 'r') as f:
         line_number = 0
         for line in f:
             line = line.strip()

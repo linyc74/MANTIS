@@ -146,7 +146,7 @@ class KmerRepeatCounter:
 
         elif offset < locus.kmer_length:
             # Possible 5' truncation
-            if (offset is 0) or read.seq[0:offset] == locus.kmer[offset:]:
+            if (offset == 0) or read.seq[0:offset] == locus.kmer[offset:]:
                 # No offset OR offset matches fragment of kmer; likely truncation
                 truncated = True
         return truncated
@@ -471,7 +471,7 @@ class KmerRepeatCounter:
             tprint('Analyzer> Thread {0} started.'.format(os.getpid()))
         while True:
             n += 1
-            if self.debug_output and (n % 10000 is 0):
+            if self.debug_output and (n % 10000 == 0):
                 tprint('Analyzer> Thread {0}'.format(os.getpid()) +
                     ' still ALIVE, loop {0}'.format(n))
 
@@ -527,7 +527,7 @@ class KmerRepeatCounter:
         ok = '\033[92m'
         reset = '\033[0m'
         fail = '\033[91m'
-        if qsize is 0:
+        if qsize == 0:
             queue_status = 'EMPTY'
         else:
             queue_status = '{0} ITEMS'.format(qsize)
@@ -609,7 +609,7 @@ class KmerRepeatCounter:
             # getting hammered with queries
             time.sleep(query_delay)
             loop_counter += 1
-            if loop_counter % proc_check_interval is 0:
+            if loop_counter % proc_check_interval == 0:
                 # Time to check that the consumers
                 # didn't die while the producer is still producing
                 mutex_out.acquire()

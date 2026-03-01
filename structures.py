@@ -77,7 +77,7 @@ class SAMRead(object):
         if length < 1:
             length = len(self.qual)
 
-        if length is 0:
+        if length == 0:
             return 0.0
 
 

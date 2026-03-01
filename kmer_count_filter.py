@@ -250,7 +250,7 @@ class MANTIS_Filter(object):
     def load_loci(self, input_filepath):
         self.loci = {}
         self.ordered_loci = []
-        with open(input_filepath, 'Ur') as f:
+        with open(input_filepath, 'r') as f:
             header = True
             for line in f:
                 if header:

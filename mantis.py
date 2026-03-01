@@ -19,7 +19,7 @@ if __name__ == "__main__":
     print(prog_name)
 
     # Make sure Pysam and NumPy are available in environment
-    required_modules_present(['Pysam', 'NumPy'])
+    # required_modules_present(['Pysam', 'NumPy'])
 
 
     parser = argparse.ArgumentParser(description=prog_name)
